@@ -61,7 +61,7 @@
     "knex": "^0.21.15",
     "lodash": "^4.17.21",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.10",
+    "nodemon": "^2.0.16",
     "objection": "^2.2.16",
     "pg": "^8.0.3",
     "ts-node": "^9.1.1",
@@ -71,7 +71,7 @@
     "winston-daily-rotate-file": "^3.10.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
+    "@babel/cli": "^7.17.10",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
