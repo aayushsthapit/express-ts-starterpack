@@ -4,16 +4,18 @@
   "description": "A typescript starterpack for express",
   "main": "src/app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "make:migration": "knex migrate:make --knexfile knexfile.ts",
     "migrate": "knex migrate:latest",
+    "make:seed": "knex seed:make --knexfile knexfile.ts",
+    "seed": "knex seed:run --knexfile knexfile.ts",
     "rollback": "knex migrate:rollback --knexfile knexfile.ts",
     "start:dev": "tsc && nodemon --watch src",
-    "build": "rimraf dist && babel src -D --out-dir dist",
+    "build": "rimraf dist && tsc",
     "start:prod": "tsc && node dist/src/app.js",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,js}'",
     "lint:fix": "tslint --fix -c tslint.json 'src/**/*.{ts,js}'",
-    "prettier": "prettier --single-quote --print-width 120 --write 'src/**/*.js'"
+    "prettier": "prettier --single-quote --print-width 120 --write 'src/**/*.ts'"
   },
   "husky": {
     "hooks": {
@@ -54,13 +56,14 @@
     "express": "^4.16.4",
     "helmet": "^4.3.0",
     "http-status-codes": "^1.3.1",
+    "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.15",
     "lodash": "^4.17.21",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "objection": "^2.2.16",
-    "pg": "^7.7.1",
+    "pg": "^8.0.3",
     "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
     "typescript": "^4.1.3",
@@ -73,8 +76,11 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@types/jest": "^27.4.1",
     "husky": "^3.0.4",
+    "jest": "^27.5.1",
     "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "ts-jest": "^27.1.4"
   }
 }
